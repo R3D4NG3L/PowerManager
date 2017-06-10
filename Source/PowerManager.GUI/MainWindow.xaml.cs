@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -113,6 +114,7 @@ namespace PowerManager.GUI
 
             // Set Data Context for Configuration User Control
             _configurationManager = new ConfigurationManager();
+            _configurationManager.Configuration.ShutdownDateTime = DateTime.Now + new TimeSpan(1, 0, 0, 0);
             ConfigurationUC.DataContext = _configurationManager.Configuration;
 
             // Set Data Context for Connection Manager User Control
@@ -137,6 +139,22 @@ namespace PowerManager.GUI
         {
             // Update Time Span
             ShutdownTimeSpan = ShutdownDateTime - DateTime.Now;
+
+            // Verify if it is time to shutdown
+            if (ShutdownTimeSpan <= new TimeSpan(0))
+            {
+                // Remove flag of shutdown on date time
+                _configurationManager.Configuration.ShutdownOnDateTime = false;
+
+                // Send shutdown command
+                var psi = new ProcessStartInfo("shutdown", "/s /t 5")
+                {
+                    CreateNoWindow = true,
+                    UseShellExecute = false
+                };
+                Process.Start(psi);
+            }
+
         }
 
         /// <summary>
