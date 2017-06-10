@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="PowerManager.GUI.ConnectionManagerUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PowerManager.GUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type local:ConnectionManager}}"
+             >
+    <UserControl.Resources>
+        <local:BoolToBrushConverter x:Key="BoolToColorConverter" FalseValue="Red"  TrueValue="Green"/>
+        <local:BoolToStringConverter x:Key="BoolToStringConverter" FalseValue="Disconnected" TrueValue="Connected"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="9,36,0,0" TextWrapping="Wrap" Text="Connection Status:" VerticalAlignment="Top" Width="103"/>
+        <TextBlock HorizontalAlignment="Left" Margin="112,36,0,0" TextWrapping="Wrap" Text="{Binding Connected, Converter={StaticResource BoolToStringConverter}, Mode=OneWay}" VerticalAlignment="Top" Foreground="{Binding Connected, Converter={StaticResource BoolToColorConverter}}"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,11,0,0" TextWrapping="Wrap" Text="Host address:" VerticalAlignment="Top" Width="103"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="112,10,0,0" TextWrapping="Wrap" Text="{Binding HostAddress}" VerticalAlignment="Top" Width="103"/>
+    </Grid>
+</UserControl>

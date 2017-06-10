@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerManager.GUI", "PowerManager.GUI\PowerManager.GUI.csproj", "{D1C4A9FF-3260-49F8-A0ED-055A2B7000D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1C4A9FF-3260-49F8-A0ED-055A2B7000D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C4A9FF-3260-49F8-A0ED-055A2B7000D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C4A9FF-3260-49F8-A0ED-055A2B7000D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C4A9FF-3260-49F8-A0ED-055A2B7000D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
