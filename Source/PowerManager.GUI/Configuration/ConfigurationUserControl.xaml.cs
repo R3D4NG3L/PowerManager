@@ -24,5 +24,23 @@ namespace PowerManager.GUI
         {
             InitializeComponent();
         }
-    }
+
+		/// <summary>
+		/// Shutdown Date Time Checked
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ShutdownOnDateTime_Checked(object sender, RoutedEventArgs e)
+		{
+			if (true
+				&& ShutdownOnDateTime.IsChecked.HasValue
+				&& ShutdownOnDateTime.IsChecked.Value)
+			{
+				ShutdownDateTime.Minimum = DateTime.Now + new TimeSpan(0, 1, 0);
+
+				if (ShutdownDateTime.Value < ShutdownDateTime.Minimum)
+					ShutdownDateTime.Value = ShutdownDateTime.Minimum;
+			}
+		}
+	}
 }

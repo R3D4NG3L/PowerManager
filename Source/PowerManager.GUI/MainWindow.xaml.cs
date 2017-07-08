@@ -114,7 +114,7 @@ namespace PowerManager.GUI
 
             // Set Data Context for Configuration User Control
             _configurationManager = new ConfigurationManager();
-            _configurationManager.Configuration.ShutdownDateTime = DateTime.Now + new TimeSpan(1, 0, 0, 0);
+            _configurationManager.Configuration.ShutdownDateTime = DateTime.Now + new TimeSpan(1, 1, 10, 0);
             ConfigurationUC.DataContext = _configurationManager.Configuration;
 
             // Set Data Context for Connection Manager User Control
