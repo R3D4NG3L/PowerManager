@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PowerManager.GUI"
         mc:Ignorable="d"
         Title="Power Manager" Height="350" Width="525"
-        d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type local:MainWindow}}" Icon="pack://siteoforigin:,,,/Images/shutdownIcon.ico" ResizeMode="NoResize"
+        d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type local:MainWindow}}" Icon="shutdownIcon.ico" ResizeMode="NoResize"
         >
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
